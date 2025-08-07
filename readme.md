@@ -7,7 +7,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/sansan0/TrendRadar?style=flat-square&logo=github&color=yellow)](https://github.com/sansan0/TrendRadar/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/sansan0/TrendRadar?style=flat-square&logo=github&color=blue)](https://github.com/sansan0/TrendRadar/network/members)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-v2.0.2-green.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
+[![Version](https://img.shields.io/badge/version-v2.0.3-green.svg?style=flat-square)](https://github.com/sansan0/TrendRadar)
 
 [![企业微信通知](https://img.shields.io/badge/企业微信-通知支持-00D4AA?style=flat-square)](https://work.weixin.qq.com/)
 [![Telegram通知](https://img.shields.io/badge/Telegram-通知支持-00D4AA?style=flat-square)](https://telegram.org/)
@@ -23,6 +23,8 @@
 > 本项目以轻量，易部署为目标，主要处理 issues
 >
 > 遇到问题提 issues，或【硅基茶水间】公众号留言
+>
+> **Fork** 的同时，如果觉得有帮助，请顺手点个 ⭐️ **Star**，感谢支持
 
 ## ✨ 核心功能
 
@@ -72,11 +74,12 @@ GitHub 一键 Fork 即可使用，无需编程基础。
 
 **典型场景：** 股市投资监控、品牌舆情追踪、行业动态关注、生活资讯获取
 
-**💡 提示：** 想要网页版？进入你的仓库 Settings → Pages，启用 GitHub Pages。比如我这里[TrendRadar](https://sansan0.github.io/TrendRadar/)。
+**💡 提示：** 想要**实时更新**的网页版？进入你的仓库 Settings → Pages，启用 GitHub Pages。比如我这里[TrendRadar](https://sansan0.github.io/TrendRadar/)。
 
-<p align="center">
-  <img src="_image/2025-06-14.jpg" alt="最新推送效果" width="400"/>
-</p>
+
+| Github Pages效果 | 飞书推送效果 |
+|:---:|:---:|
+| ![Github Pages效果](_image/github-pages.png) | ![飞书推送效果](_image/feishu.jpg) |
 
 <details>
 <summary><strong>👉 点击查看推送格式说明</strong></summary>
@@ -118,14 +121,17 @@ GitHub 一键 Fork 即可使用，无需编程基础。
 - **小版本更新**：直接在 GitHub 网页编辑器中，用本项目的 `main.py` 代码替换你 fork 仓库中的对应文件 
 - **大版本升级**：从 v1.x 升级到 v2.0 建议删除现有 fork 后重新 fork，这样更省力且避免配置冲突
 
-### 2025/07/28 - v2.0.2
+### 2025/08/06 - v2.0.3
 
-- 重构代码
-- 解决版本号容易被遗漏修改的问题
+- 优化 github page 的网页版效果，方便移动端使用
 
 <details>
 <summary><strong>👉 历史更新</strong></summary>
 
+### 2025/07/28 - v2.0.2
+
+- 重构代码
+- 解决版本号容易被遗漏修改的问题
 
 ### 2025/07/27 - v2.0.1
 
@@ -531,7 +537,7 @@ frequency_words.txt 文件增加了一个【必须词】功能，使用 + 号
 
 4. **自动运行**:
 
-   - 项目已包含`.github/workflows/crawler.yml`配置文件，默认每 30 分钟自动运行一次
+   - 项目已包含`.github/workflows/crawler.yml`配置文件，默认每小时运行一次
    - 你也可以在 GitHub 仓库的 Actions 页面手动触发运行
 
 5. **查看结果**:
@@ -619,11 +625,28 @@ platforms:
 
 |           点赞人            |  金额  |  日期  |             备注             |
 | :-------------------------: | :----: | :----: | :-----------------------: |
+|           S*o            |  1  | 2025.8.05 |   支持一下        |
+|           *侠            |  10  | 2025.8.04 |           |
 |           x*x            |  2  | 2025.8.03 |  trendRadar 好项目 点赞          |
 |           *远            |  1  | 2025.8.01 |            |
 |           *邪            |  5  | 2025.8.01 |            |
 |           *梦            |  0.1  | 2025.7.30 |            |
 |           **龙            |  10  | 2025.7.29 |      支持一下      |
+
+<details>
+<summary><strong>👉 微信推送通知的折中方案</strong></summary>
+<br>
+
+> 由于该方案是基于企业微信的插件机制，推送样式也十分不同，所以相关实现我暂时不准备纳入当前项目
+
+- fork 这位兄台的项目 https://github.com/jayzqj/TrendRadar
+- 完成上方的企业微信推送设置 
+- 按照下面图片操作
+<img src="_image/wework.png"  title="github"/>
+
+- 配置好后，手机上的企业微信 app 删除掉也没事
+
+</details>
 
 <details>
 <summary><strong>👉 自荐</strong></summary>
@@ -675,7 +698,7 @@ flowchart TD
     F --> G[🎯 选择运行模式<br/>config/config.yaml<br/>daily/current/incremental]
     
     G --> H[✅ 配置完成]
-    H --> I[🤖 系统每30分钟自动运行]
+    H --> I[🤖 系统根据设定时间自动运行]
     
     I --> J[📊 爬取各大平台热点]
     J --> K[🔍 根据关键词筛选]
